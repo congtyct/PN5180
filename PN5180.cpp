@@ -45,7 +45,7 @@ PN5180::PN5180(uint8_t SSpin, uint8_t BUSYpin, uint8_t RSTpin, SPIClass& spi) :
   PN5180_MOSI(-1)
 {
   // Giảm từ 7MHz xuống 2MHz cho ổn định trên ESP32-S3 + PN5180
-  SPI_SETTINGS = SPISettings(2000000, MSBFIRST, SPI_MODE0);
+  SPI_SETTINGS = SPISettings(1000000, MSBFIRST, SPI_MODE0);
 }
 
 PN5180::~PN5180() {
